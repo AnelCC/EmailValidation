@@ -1,15 +1,15 @@
 package com.anelcc.cleanarchitecturehandleerrors.domain
 
+import com.anelcc.cleanarchitecturehandleerrors.data.Repository
 import com.anelcc.cleanarchitecturehandleerrors.util.Resource
 
-class SubmitEmailUseCase {
+class SubmitEmailUseCase(val repository: Repository = Repository()) {
 
-    fun execute(email: String): Resource<Unit> {
+    suspend fun execute(email: String): Resource<Unit> {
         if (!email.contains("@")) {
             return Resource.Error("This is not a valid email")
         }
-
+        return repository.submitEmail(email)
     }
 
-    class InvalidEmailException: Exception("This is not an email")
 }
