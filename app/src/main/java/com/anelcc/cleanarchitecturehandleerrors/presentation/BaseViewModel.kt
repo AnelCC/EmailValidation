@@ -7,14 +7,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.anelcc.cleanarchitecturehandleerrors.domain.SubmitEmailUseCase
 import com.anelcc.cleanarchitecturehandleerrors.util.Resource
+import com.anelcc.cleanarchitecturehandleerrors.util.UiText
 import kotlinx.coroutines.launch
 
-class BaseViewMode(val submitEmailUseCase: SubmitEmailUseCase = SubmitEmailUseCase()) : ViewModel() {
+class BaseViewModel(val submitEmailUseCase: SubmitEmailUseCase = SubmitEmailUseCase()) : ViewModel() {
 
     var email by mutableStateOf("")
         private set
 
-    var error by mutableStateOf<String?>(null)
+    var error by mutableStateOf<UiText?>(null)
         private set
 
 
@@ -27,7 +28,7 @@ class BaseViewMode(val submitEmailUseCase: SubmitEmailUseCase = SubmitEmailUseCa
             val result = submitEmailUseCase.execute(email)
             when(result) {
                 is Resource.Success -> {
-
+//                    error = result.message
                 }
                 is Resource.Error -> {
                     error = result.message
