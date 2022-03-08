@@ -40,6 +40,7 @@ com.anelcc.cleanarchitecturehandleerrors      # Root Package
 ```
 ### Preview 🎉
 
+<img src="https://raw.githubusercontent.com/AnelCC/EmailValidation/main/images/1.emptyScreen.png" width="180" height="300"/> <img src="https://raw.githubusercontent.com/AnelCC/EmailValidation/main/images/2.emailValidation.png" width="180" height="300"/> <img src="https://raw.githubusercontent.com/AnelCC/EmailValidation/main/images/3.ServerError.png" width="180" height="300"/> <img src="https://raw.githubusercontent.com/AnelCC/EmailValidation/main/images/4.AuthError.png" width="180" height="300"/>
 
 
 ### Library References
